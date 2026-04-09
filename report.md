@@ -9,11 +9,11 @@ O aumento da dificuldade seria basicamente adicionar um item a lista, pois matem
 | 4         |     1/4 ≃ 25% |
 | 5         |     1/5 ≃ 20% |
 
-> Nessa sequencia, vermos que a porcentagem de acerto diminuir com o aumento da lista (diff)
+> Nessa sequencia, vemos que a porcentagem de acerto diminui com o aumento da lista (diff)
 
 ### Arquitetura do projeto
 
-Utilizamos um metodo Clean Code apesar do projeto ser basico e pequeno.
+Utilizamos um metodo `Clean Code` apesar do projeto ser basico e pequeno.
 A ideia era implementar uma logica de arquivos onde cada um tinha seu objetivo:
 
 - **_main.py_** -> Responsavel por ser o I/O, ou melhor, falava com o terminal e o usuario chamando os metodos da roleta. O entry pointer do jogo ou aplicação.
@@ -29,7 +29,7 @@ A decisão de implementar uma Lista Encadeada Circular baseou-se puramente em um
 
 - **INSERÇÃO (enqueue)**: Como sabemos como referencia direta em memoria de quem é o último item da lista, quando desejamos inserir um novo nó ao final da lista (enqueue) teremos em tempo de execução (Big O) uma rapida inserção de O(1). Essa eficiencia é ótima para quando desejamos aumentar a lista diferente de uma lista onde sabemos apenas o inicio (Head), pois deveriamos passar por toda estrutura até o final tendo um tempo O(N) - N sendo a quantidade de elementos da lista.
 
-- **First Item**: Apesar da lista se parecer com um circulo abstrato, onde não há um "Inicio" ou um "Fim".Contudo, na nossa ED essa demarcação é deduzida de forma implicita. Como guardamos sempre o ultimo elemento (_self.tail_) sabendo dessa informação descobriremos instantaneamente o primeiro nó acessando o ponteiro _self.tail.next_. Essa caracteristica garante que o tempo de remoção do primeiro item e ao acesso dele ocorra de forma instantanea em tempo O(1), sem a necessidade de manter duas variaveis de estado na classe.
+- **Remoção: First Item (dequeue)**: Apesar da lista se parecer com um circulo abstrato, onde não há um "Inicio" ou um "Fim".Contudo, na nossa ED essa demarcação é deduzida de forma implicita. Como guardamos sempre o ultimo elemento (_self.tail_) sabendo dessa informação descobriremos instantaneamente o primeiro nó acessando o ponteiro _self.tail.next_. Essa caracteristica garante que o tempo de remoção do primeiro item e ao acesso dele ocorra de forma instantanea em tempo O(1), sem a necessidade de manter duas variaveis de estado na classe.
 
 ---
 
